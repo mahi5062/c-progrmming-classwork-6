@@ -1,0 +1,32 @@
+#include <stdio.h>
+#include <string.h>
+
+struct Student 
+{
+  char name[5000];
+  int age;
+};
+
+void display_Student_Details(struct Student s) 
+{
+  printf("Name: %s\n", s.name);
+  printf("Age: %d\n", s.age);
+}
+int main() 
+{
+  struct Student student1,student2;
+  printf("enter student1 name:");
+  scanf("%c",student1.name);
+  printf("enter age of student1:");
+  scanf("%d",student1.age);
+  printf("enter student2 name:");
+  scanf("%c",student2.name);
+  printf("enter age of student2:");
+  scanf("%d",student2.age);
+  printf("name of the studnt1:%c\n",student1.name);
+  printf("age of student1:%d\n",student1.age);
+  printf("name of the studnt2:%c\n",student2.name);
+  printf("age of student2:%d\n",student2.age);
+  
+  return 0;
+}
