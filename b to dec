@@ -1,0 +1,44 @@
+#include <stdio.h>
+#include <math.h>
+int binaryToDecimal(long binaryNum) 
+   {
+    int decimalNum = 0, i = 0, rem;
+    while (binaryNum != 0) 
+    {
+        rem = binaryNum % 10;
+        binaryNum /= 10;
+        decimalNum += rem *pow(2,i);
+        i++;
+    }
+    return decimalNum;
+}
+
+long  decimalToBinary(int decimalNum) 
+{
+    long  binaryNum = 0;
+    int rem, i = 1;
+    while (decimalNum != 0) 
+    {
+        rem = decimalNum % 2;
+        decimalNum /= 2;
+        binaryNum += rem * i;
+        i *= 10;
+    }
+    return binaryNum;
+}
+
+int main() {
+    long  binaryNum;
+    int decimalNum;
+    printf("Enter a binary number: ");
+    scanf("%11d", &binaryNum);
+    decimalNum = binaryToDecimal(binaryNum);
+    printf("%lld in binary = %d in decimal",binaryNum,decimalNum);
+
+    printf("Enter a decimal number: ");
+    scanf("%d", &decimalNum);
+    binaryNum = decimalToBinary(decimalNum);
+    printf("%d in decimal = %11d in binary",decimalNum, binaryNum);
+
+    return 0;
+}
